@@ -21,13 +21,16 @@ class App extends Component {
       })
     })
   }
+
+  paginate = (number) => this.setState({currentPage:number});
+
   render(){
 
  
     const lastCountryIndex = this.state.currentPage * this.state.contriesPerPage
     const firstCountryIndex = lastCountryIndex - this.state.contriesPerPage
     const currentCountry = this.state.countrys.slice(firstCountryIndex, lastCountryIndex)
-    const paginate = pageNumber => this.setState({currentPage:pageNumber});
+
     return (
       <div >
       {currentCountry.map((value, index)=>{
@@ -37,7 +40,7 @@ class App extends Component {
           </div>
         )})}
         <div className='pagination'>
-          <Pagination contriesPerPage={this.state.contriesPerPage} totalCountrys={this.state.countrys.length} paginate={paginate}/>  
+          <Pagination contriesPerPage={this.state.contriesPerPage} totalCountrys={this.state.countrys.length} paginate={this.paginate}/>  
         </div>   
       </div>
     )
