@@ -2,8 +2,11 @@
   display: flex;
 }
 .accordion{
-  display: flex;
+  display: inline-block;
+  text-align: left;
+  cursor: pointer;
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

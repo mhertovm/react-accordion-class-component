@@ -13,9 +13,9 @@ class Accordion extends React.Component{
     render(){
         return(
             <div>
-                <div  className="accordion" style={{textDecorationLine: "underline"}}>
-                    <div>{this.props.name}</div>
-                    <div onClick={this.change}>{this.state.isActive ? '-' : '+'}</div>
+                <div onClick={this.change} className="accordion" style={{textDecorationLine: "underline"}}>
+                    {this.props.name}
+                    {this.state.isActive ? '-' : '+'}
                 </div>
                 {this.state.isActive && <div style={{color:"red"}}>{this.props.capital}</div>}
             </div>
